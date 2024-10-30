@@ -1,0 +1,42 @@
+p,ol,ul{
+   font-size: 15px;
+}
+
+#malinf-bk{ 
+     margin:0.7em;
+}
+
+/* number inputs */
+
+#api-actual{
+    width:4em;
+}
+#api-manual{
+    width:5.8em;
+}
+.malinf-item{
+    margin:2em;
+}
+.malinf-item.hide{
+    display:none;
+}
+input[type="radio"]{
+    top: 2px;
+    position: relative;
+}
+#tipodc>span>input[type="radio"]{
+    margin-right: 7px;
+    margin-left: 2px;
+}
+
+#redond>span>input[type="radio"]{
+    margin-right: 7px;
+    margin-left: 2px;
+}
+#warning-box{
+    background: seashell;
+    border: red 1px solid;
+    padding: 0.5em;
+    text-align: center;
+}
+ 

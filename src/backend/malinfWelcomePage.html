@@ -1,0 +1,120 @@
+<h1>MALDITA INFLACION !</h1>
+<p>Convierte los precios en tu tienda en base al cambio dolar oficial/blue</p>
+    
+    
+  <p>Actualiza automaticamente en base a respuesta api</p>
+  <a href="https://api.bluelytics.com.ar/v2/latest" target="_blank">Esta API es de uso gratuito y es de donde extrae los datos este plugin.</a>
+  <br/><br/>
+  <h3>Opciones de la pagina <a href="?page=malinf_admin">Ajustes:</a> </h3>
+
+ 
+
+      <h4>1_ API</h4>
+      <p>Selecciona la opcion modo API para actualizar los precios automaticamente</p>
+      <p>Selecciona el periodo de tiempo entre cada actualizacion de precios</p>
+      <p>Seleccione el tipo de cambio dolar oficial o blue</p>
+      <br/>
+    
+
+      <h4>2_ MANUAL</h4>
+      <p>Selecciona la opcion modo MANUAL para ingresar el valor de cambio manualmente</p>
+      <p>Ingresa un valor numerico</p>
+      <br/>
+      <h4>3_ Redondeo</h4>
+      <p>Redondea los valores al realizar la actualizacion de precios</p>
+      <ol>
+        <li>-No redondear: redondeo desactivado</li>
+        <li>-Abajo: redondea hacia abajo de acuerdo al alcance asignado</li>
+        <li>-Arriba: redondea hacia arriba de acuerdo al alcance asignado</li>
+        <li>-Alcance: rango en el que aplicar el redondeo
+           <p><b>Ejemplo (Redondeo: abajo - Alcance: 10)</b></p>
+           <p>2348 = 2340</p>  
+           <p><b>Ejemplo (Redondeo: arriba - Alcance: 10)</b></p>
+           <p>2348 = 2350</p>   
+           <p><b>Ejemplo (Redondeo: abajo - Alcance: 100)</b></p>
+           <p>2348 = 2300</p>                  
+           <p><b>Ejemplo (Redondeo: arriba - Alcance: 100)</b></p>
+           <p>2348 = 2400</p>                    
+           
+          
+        </li>
+      </ol>
+      <br/>
+          <h4>4_ GUARDAR</h4>
+          <p>Guarda los cambios de las opciones parra la proxima actualizacion </p>
+          <br/> <h4>5_ CAMBIAR AHORA</h4>
+          <p>Convierte los precios de tus productos a valor de cambio asignado pulsando el boton CAMBIAR AHORA</p>
+          
+          <ol>
+            <li>          
+              <p>Al presionar el boton, se actualizaran los precios de todos los productos que tengan un valor de cambio asignado</p>
+            </li>
+            <li>          
+              <p>Se registra la accion para efectuarse a la misma hora, en base al rango temporal de actualizacion seleccionado en dias</p>
+            </li>           
+          </ol>
+    
+<br/><br/>
+
+      <h3>Opciones de la pagina <a href="?page=malinf_config">Configuracion:</a> </h3>
+
+          <h4>Convertir precios a valor de TDC</h4>
+          <p>Si los precios estan expresados en dolares, convierte a pesos asignando el precio actual al valor del Tipo de cambio</p>
+          <p>No ejecuta ninguna actualizacion de precios en la tienda, solo guarda los precios como valor de Tipo de Cambio para cada producto</p>
+          <br/>
+          <h4>Limpiar base de datos</h4>
+          <p>Elimina registros del plugin al desinstalarlo</p>
+          <pre><i>ESTA FUNCION ESTA EN DESARROLLO</i></pre>
+          <br/>
+
+ 
+<h2>Modo de uso:</h2>
+
+<p>Al activar el plugin por primera vez, se vera un campo adicional en la pagina de edicion de productos.</p>
+<q><b><em>Valor TDC (Tipo De Cambio)</em></b></q>
+
+<p>Para comenzar, es necesario ingresar un valor en este campo.</p>
+
+<p>El valor del tipo de cambio que se aplicara en cada actualizacion de precios puede ser una de las siguientes segun la configuracion de las opciones:</p>
+<ol>
+  <li><p>Modo API: dolar oficial o blue</p></li>
+  <li><p>Modo Manual: El valor ingresado en la opcion "Valor del tipo de cambio</p></li>
+</ol>
+ 
+<p>Repetir la operacion en todos los productos a los que se desea aplicar la conversion con el tipo de cambio
+</p>
+<p>No es necesario ingresar el valor en todos los productos. Los que no tengan valor TDC no se actualizaran</p>
+
+<p>Una vez finalizado el proceso pulsar el boton CAMBIAR AHORA para realizar las actualizaciones de precio en toda la tienda</p>
+
+<p>Solo los productos que tengan asignado un valor en el campo VALOR TIPO DE CAMBIO seran actualizados</p>
+<p>Para desactivar la actualizacion en productos individuales, dejar el campo valor TDC vacio</p>
+<p>Una vez hecho lo anterior, puedes actualizar el precio nuevamente usando el campo "precio" de WC como lo harias normalmente al editar un producto</p>
+
+<hr><hr>
+<h2>Funcionamiento:</h2>
+<p>  &bull; La actualizacion de precios se realiza pulsando el boton Cambiar Ahora</p>
+<p>  &bull; En ese mismo momento, se iniciara el cronometro para llegar a la proxima actualizacion</p>
+<p>  &bull; La actualizacion de precios se realiza automaticamente al cargar cualquier pagina del backend</p>
+<p>  &bull; Las actualizaciones no se efectuan en segundo plano o sin carga del backend</p>
+<p>  &bull; Este plugin no ejecuta ningun tipo de accion en el frontend</p>
+<p>  &bull; El rango de tiempo entre cada actualizacion esta dado en dias pero no se ajusta al formato fecha (30 dias puede no ser un mes exactamente)</p>
+<p>  &bull; El campo de producto precio de WooCommerce queda desactivado si el campo Valor TDC no esta vacio</p>
+<hr><hr>
+<p><b>No soporta precio de oferta "sale"</b></p>
+<p><b>No soporta productos variables</b></p>
+
+<hr><hr>
+
+<p>
+  &bull; <em><a href="https://wordpress.org/support/plugin/maldita-inflacion/" target="_blank">Abre un ticket de soporte</a> </em>
+</p>
+<p>
+  &bull; <em><a href="https://digitalek.com/contacto/" target="_blank">Contacta al autor de este plugin: </a> </em>
+</p>
+<p>
+  &bull;<em><a href="https://paypal.me/sebastopolys/" target="_blank">Aporta al desarrollo del plugin con una donacion</a></em>
+</p>
+
+<p><i>V 1.0.3</i></p>
+
